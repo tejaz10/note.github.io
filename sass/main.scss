@@ -1,4 +1,7 @@
+@import "media";
+
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
 $pink: #f9fbe7;
 
@@ -13,8 +16,15 @@ $pink: #f9fbe7;
 }
 
 html {
+  user-select: none;
   scroll-behavior: smooth;
   font-size: 62.5%;
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 *,
@@ -36,11 +46,21 @@ body {
   background-size: cover;
   height: 100vh;
 
+  @include respond(phone) {
+    width: 100%;
+    height: 81vh;
+    padding: 3rem;
+  }
+
   .container {
     height: 90%;
     width: 100%;
     display: flex;
     justify-content: center;
+
+    @include respond(phone) {
+      display: inline-block;
+    }
 
     &__left {
       color: #eff7d3;
@@ -51,6 +71,29 @@ body {
       padding: 3rem;
       margin-top: 3rem;
       font-family: "Monarda", sans-serif;
+
+      @include respond(tab-land) {
+        font-size: 6.5rem;
+        padding: 1rem;
+        margin-top: 12rem;
+        margin-left: 1.5rem;
+        flex-basis: 54%;
+      }
+
+      @include respond(tab-port) {
+        font-size: 5.5rem;
+        padding: 0rem;
+        margin-top: 16rem;
+        margin-left: 0rem;
+      }
+
+      @include respond(phone) {
+        margin-top: 12rem;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 3.5rem;
+        margin-left: -2rem;
+      }
 
       & .color {
         line-height: 2;
@@ -69,6 +112,15 @@ body {
       .image {
         width: 39rem;
         height: 41rem;
+
+        @include respond(tab-port) {
+          width: 38rem;
+          height: 38rem;
+        }
+
+        @include respond(phone) {
+          display: none;
+        }
       }
     }
   }
@@ -92,8 +144,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-basis: 48%;
-    margin-left: 4rem;
+    flex-basis: 40%;
+    margin-left: 6rem;
+
+    @include respond(tab-port) {
+      flex-basis: 52%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__link {
@@ -164,6 +224,10 @@ body {
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 18px;
+
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 .button-name:focus {
@@ -192,6 +256,8 @@ button {
   text-decoration: none;
   font-family: inherit;
   font-size: 15px;
+  width: 15rem;
+  margin-left: 2.4rem;
 }
 
 button.learn-more {
@@ -263,21 +329,35 @@ button.learn-more:active::before {
   color: #000;
   height: 100vh;
   display: flex;
-
   .select {
-    padding: 2rem;
+    padding-top: 2rem;
     height: 100%;
     width: 15%;
     background-color: #ade4db;
-    display: flex;
-    flex-direction: column;
+
+    // @include respond(tab-port) {
+    //   display: none;
+    // }
+
+    @include respond(tab-land) {
+      display: none;
+    }
+
+    .inner {
+      margin-left: 1rem;
+      margin-top: 5rem;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
   }
 
   .option__text {
-    margin-bottom: 2rem;
-    font-size: 3rem;
-    text-align: center;
-    color: #eee;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    text-align: left;
+    color: #414a4c;
   }
 
   .learn-more {
@@ -289,6 +369,12 @@ button.learn-more:active::before {
     flex: 1;
     background-color: #eee;
     padding: 2rem;
+
+    @include respond(phone) {
+      height: 108vh;
+      width: 100%;
+      padding-top: 03rem;
+    }
 
     &__physics {
       height: 61rem;
@@ -304,6 +390,10 @@ button.learn-more:active::before {
         width: 25%;
         background-color: #444;
 
+        @include respond(phone) {
+          width: 30%;
+        }
+
         ul {
           height: 100%;
           padding-left: 3.5rem;
@@ -314,12 +404,18 @@ button.learn-more:active::before {
           flex-direction: column;
           justify-content: space-around;
 
+          @include respond(phone) {
+            padding-left: 0.5rem;
+            width: 100%;
+          }
+
           .item__link {
             text-decoration: none;
             color: #fff;
             transition: all 0.2s;
 
             &:hover {
+              cursor: pointer;
               color: #adc6f2;
               font-size: 1.9rem;
             }
@@ -405,6 +501,503 @@ button.learn-more:active::before {
   @media (max-width: 700px) {
     .tabs {
       transform: scale(0.6);
+    }
+  }
+}
+// Table global formattings
+
+th {
+  font-size: 1.8rem;
+  width: 33.33%;
+}
+
+td {
+  font-weight: 500;
+  font-size: 1.6rem;
+  width: 33.33%;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+  text-align: center;
+}
+
+// physics
+
+.notes {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .phy {
+    display: table;
+    width: 100%;
+  }
+}
+//Table functioning
+.notes1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .mat {
+    display: table;
+    width: 100%;
+  }
+}
+
+.notes2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .web {
+    display: table;
+    width: 100%;
+  }
+}
+
+.notes3 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .mech {
+    display: table;
+    width: 100%;
+  }
+}
+
+.notes4 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .mqp {
+    display: table;
+    width: 100%;
+  }
+}
+
+.notes5 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .qp {
+    display: table;
+    width: 100%;
+  }
+}
+
+// Chemistry
+
+.Cnotes {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .Cphy {
+    display: table;
+    width: 100%;
+  }
+}
+//Table functioning
+.Cnotes1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .Cmat {
+    display: table;
+    width: 100%;
+  }
+}
+
+.Cnotes2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .Cweb {
+    display: table;
+    width: 100%;
+  }
+}
+
+.Cnotes3 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .Cmech {
+    display: table;
+    width: 100%;
+  }
+}
+
+.Cnotes4 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .Cmqp {
+    display: table;
+    width: 100%;
+  }
+}
+
+.Cnotes5 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+
+  .Cqp {
+    display: table;
+    width: 100%;
+  }
+}
+
+.color {
+  color: #fff;
+  display: inline-block;
+  margin-left: 6rem;
+  margin-bottom: 2rem;
+}
+
+.color1 {
+  color: #185ee0;
+  text-decoration: none;
+}
+
+.color2 {
+  color: #185ee0;
+}
+
+.btn__link {
+  font-weight: 600;
+  color: #382b22;
+  text-decoration: none;
+}
+
+.credits {
+  padding: 5rem;
+  height: 100vh;
+  background-color: #eee;
+
+  @include respond(tab-port) {
+    padding: 3rem;
+  }
+
+  @include respond(phone) {
+    padding-top: 9rem;
+    // padding: 1rem;
+    margin-top: 5rem;
+    width: 100%;
+    height: 51vh;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+h2.heading {
+  padding-left: 1rem;
+}
+
+.main {
+  font-family: "Maghody";
+  color: #fc4f00;
+  font-size: 5.5rem;
+}
+
+.form__main {
+  margin-bottom: 3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+//FORM
+.container0 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff5b8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+  @include respond(tab-port) {
+    width: 300px;
+    margin-left: -12.5rem;
+  }
+
+  @include respond(phone) {
+    display: none;
+    width: 300px;
+    margin-left: 12rem;
+    margin-top: 4rem;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group .form__link {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #4caf50;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.form__link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.form-group a:hover {
+  background-color: #45a049;
+}
+
+// REST
+.rest {
+  height: 40rem;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 13rem;
+  border-radius: 9px;
+
+  &__phone {
+    display: none;
+
+    @include respond(phone) {
+      display: inline-block;
+      margin-top: 4.5rem;
+    }
+  }
+
+  // @include respond(tab-port) {
+  //   display: block;
+  //   padding: 2rem;
+  //   margin-left: 8rem;
+  // }
+
+  @include respond(phone) {
+    position: absolute;
+    height: 45rem;
+    width: 91%;
+    margin-left: 3rem;
+    top: 103%;
+    left: 0;
+    display: none;
+  }
+
+  &__left {
+    width: 50%;
+    margin-left: 3rem;
+    padding-left: 3rem;
+    text-align: left;
+
+    @include respond(tab-port) {
+      width: 92%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+    .context {
+      padding: 1rem;
+      line-height: 2;
+      width: 87%;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      text-align: left;
+
+      @include respond(tab-port) {
+        line-height: 1.5;
+        text-align: center;
+      }
+    }
+  }
+
+  &__right {
+    width: 50%;
+  }
+
+  // @include respond(phone) {
+  //   width: 0%;
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 44%;
+  //   transform: translate(-50%, -50%);
+  // }
+}
+
+.footer {
+  background-color: #333;
+  //#adc6f2;
+  height: 10rem;
+  margin-top: 4.5rem;
+  width: 99vw;
+  margin-left: -5.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(tab-port) {
+    margin-top: 12.5rem;
+    margin-left: -2.2rem;
+  }
+
+  @include respond(phone) {
+    margin-top: 12.5rem;
+    margin-left: -2.1rem;
+  }
+
+  .icons {
+    display: flex;
+    display: inline-block;
+
+    i {
+      margin-top: 0.5rem;
+      text-align: center;
+      margin-right: 2.2rem;
+      font-size: 1.6rem;
+      // color: #777;
+      background-color: #eee;
+      padding: 0.7rem;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+i.fa-twitter {
+  color: #1da1f2;
+}
+
+i.fa-facebook {
+  color: #4267b2;
+}
+
+i.fa-instagram {
+  // color: #962fbf;
+  color: #c13584;
+}
+
+.copy {
+  font-size: 2rem;
+  font-family: "Monarda", sans-serif;
+  font-weight: 100;
+  color: #fff;
+  margin-left: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.color3 {
+  color: #36395a;
+  text-decoration: none;
+  line-height: 3;
+}
+
+.content {
+  height: 100vh;
+  flex: 1;
+  background-color: #eee;
+  padding: 2rem;
+
+  &__chemistry {
+    height: 61rem;
+    display: flex;
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
+    border-radius: 9px;
+    overflow: hidden;
+
+    .subjects {
+      height: 100%;
+      width: 25%;
+      background-color: #444;
+
+      @include respond(phone) {
+        width: 30%;
+      }
+
+      ul {
+        height: 100%;
+        padding-left: 3.5rem;
+        font-size: 1.8rem;
+
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @include respond(phone) {
+          padding: 0.5rem;
+          width: 100%;
+        }
+
+        .item__link {
+          text-decoration: none;
+          color: #fff;
+          transition: all 0.2s;
+
+          &:hover {
+            cursor: pointer;
+            color: #adc6f2;
+            font-size: 1.9rem;
+          }
+        }
+      }
     }
   }
 }

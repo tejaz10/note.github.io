@@ -5,17 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="img/bird logo1.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&family=Poppins:wght@100;300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Noteify</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <nav class="navigation">
         <div class="navigation__logo">
           <div class="logo">Noteify</div>
@@ -23,20 +31,19 @@
 
         <ul class="navigation__nav">
           <li class="navigation__item">
-            <a href="#" class="navigation__link">About us</a>
+            <a href="#header" class="navigation__link">About us</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link">Notes</a>
+            <a href="#here" class="navigation__link">Notes</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link">Issues</a>
-          </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link">Credits</a>
+            <a href="#credits" class="navigation__link">Credits</a>
           </li>
         </ul>
 
-        <button role="button" class="button-name">Contact Us</button>
+        <button role="button" class="button-name">
+          <a href="#credits" class="color3">Contact Us</a>
+        </button>
       </nav>
 
       <div class="container">
@@ -52,19 +59,30 @@
       </div>
     </header>
     <main>
-      <section class="section__notes">
+      <section class="section__notes" id="here">
         <div class="select">
-          <p class="option__text">Select the cycle :</p>
-          <button class="learn-more">Physics</button>
-          <button class="learn-more">chemistry</button>
+          <div class="inner">
+            <p class="option__text">
+              <span class="color2">Note:</span><br />
+              If the link is not working, then the selected note is yet to be
+              uploaded
+            </p>
+            <button class="learn-more">
+              <a href="mailto:someone@example.com" class="btn__link">Request</a>
+            </button>
+          </div>
         </div>
         <div class="content">
           <div class="container1">
             <div class="tabs">
               <input type="radio" id="radio-1" name="tabs" checked="" />
-              <label class="tab" for="radio-1">1st semester</label>
+              <label onclick="changeP()" class="tab" for="radio-1"
+                >Physics cycle</label
+              >
               <input type="radio" id="radio-2" name="tabs" />
-              <label class="tab" for="radio-2">2nd Semester</label>
+              <label onclick="changeC()" class="tab" for="radio-2"
+                >Chemistry Cycle</label
+              >
               <span class="glider"></span>
             </div>
           </div>
@@ -73,34 +91,1069 @@
             <div class="subjects">
               <ul>
                 <li class="item item--1">
-                  <a href="#" class="item__link">1. Physics</a>
+                  <a onclick="show()" class="item__link">1. Physics</a>
                 </li>
                 <li class="item item--2">
-                  <a href="#" class="item__link">2. Mathematics 1</a>
+                  <a onclick="show1()" class="item__link">2. Mathematics 1</a>
                 </li>
                 <li class="item item--3">
-                  <a href="#" class="item__link"
+                  <a onclick="show2()" class="item__link"
                     >3. Principles of programming
                   </a>
                 </li>
                 <li class="item item--4">
-                  <a href="#" class="item__link"
+                  <a onclick="show3()" class="item__link"
                     >4. Intro to web programming
                   </a>
                 </li>
                 <li class="item item--5">
-                  <a href="#" class="item__link">5. Intro to mechanical Eng.</a>
+                  <a onclick="show4()" class="item__link"
+                    >5. Intro to mechanical Eng.</a
+                  >
                 </li>
                 <li class="item item--6">
-                  <a href="#" class="item__link">6. Model Question Papers</a>
+                  <a onclick="show5()" class="item__link"
+                    >6. Model Question Papers</a
+                  >
                 </li>
               </ul>
             </div>
-            <div class="notes"></div>
+            <div class="notes">
+              <table class="notes__table phy">
+                <tr class="notes__head">
+                  <th>Modules (P)</th>
+                  <th>Digital Notes (P)</th>
+                  <th>Written Notes (P)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="notes1">
+              <table class="notes__table mat">
+                <tr class="notes__head">
+                  <th>Modules (M1)</th>
+                  <th>Digital Notes (M1)</th>
+                  <th>Written Notes (M1)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="notes2">
+              <table class="notes__table web">
+                <tr class="notes__head">
+                  <th>Modules (C)</th>
+                  <th>Digital Notes (C)</th>
+                  <th>Written Notes (C)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="notes3">
+              <table class="notes__table mech">
+                <tr class="notes__head">
+                  <th>Modules (Web)</th>
+                  <th>Digital Notes (Web)</th>
+                  <th>Written Notes (Web)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="notes4">
+              <table class="notes__table mqp">
+                <tr class="notes__head">
+                  <th>Modules (Mech)</th>
+                  <th>Digital Notes (Mech)</th>
+                  <th>Written Notes (Mech)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="notes5">
+              <table class="notes__table qp">
+                <tr class="notes__head">
+                  <th>Subject</th>
+                  <th>2021</th>
+                  <th>2022</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Physics</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Mathematics 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>POP using C</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Web Programming</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Mechanical</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
-          <!-- <div class="content__chemistry"></div> -->
+
+          <div class="content__chemistry">
+            <div class="subjects">
+              <ul>
+                <li class="item item--1">
+                  <a onclick="showC()" class="item__link">1. Chemistry</a>
+                </li>
+                <li class="item item--2">
+                  <a onclick="showC1()" class="item__link">2. Mathematics 2</a>
+                </li>
+                <li class="item item--3">
+                  <a onclick="showC2()" class="item__link">3. Electornics </a>
+                </li>
+                <li class="item item--4">
+                  <a onclick="showC3()" class="item__link"
+                    >4. Waste Management
+                  </a>
+                </li>
+                <li class="item item--5">
+                  <a onclick="showC4()" class="item__link"
+                    >5. Inovation and design thinking</a
+                  >
+                </li>
+                <li class="item item--6">
+                  <a onclick="showC5()" class="item__link"
+                    >6. Model Question Papers</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="Cnotes">
+              <table class="notes__table Cphy">
+                <tr class="notes__head">
+                  <th>Modules (Chem)</th>
+                  <th>Digital Notes (Chem)</th>
+                  <th>Written Notes (Chem)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="Cnotes1">
+              <table class="notes__table Cmat">
+                <tr class="notes__head">
+                  <th>Modules (M2)</th>
+                  <th>Digital Notes (M2)</th>
+                  <th>Written Notes (M2)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="Cnotes2">
+              <table class="notes__table Cweb">
+                <tr class="notes__head">
+                  <th>Modules (E)</th>
+                  <th>Digital Notes (E)</th>
+                  <th>Written Notes (E)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="Cnotes3">
+              <table class="notes__table Cmech">
+                <tr class="notes__head">
+                  <th>Modules (W)</th>
+                  <th>Digital Notes (W)</th>
+                  <th>Written Notes (W)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="Cnotes4">
+              <table class="notes__table Cmqp">
+                <tr class="notes__head">
+                  <th>Modules (IDT)</th>
+                  <th>Digital Notes (IDT)</th>
+                  <th>Written Notes (IDT)</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Module 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 2</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 3</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 4</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Module 5</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="Cnotes5">
+              <table class="notes__table Cqp">
+                <tr class="notes__head">
+                  <th>Subject</th>
+                  <th>2021</th>
+                  <th>2022</th>
+                </tr>
+                <tr class="notes__content">
+                  <td>Physics</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Mathematics 1</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>POP using C</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Web Programming</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+
+                <tr class="notes__content">
+                  <td>Mechanical</td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#here" class="digital__link"
+                      >Download <i class="fa fa-light fa-file-arrow-down"></i
+                    ></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="credits" id="credits">
+        <h2 class="main">Credits</h2>
+        <h2 class="heading">
+          All the above content displayed are from the teachers and students of
+          <a target="_blank" href="https://www.seaedu.ac.in/Home" class="color1"
+            >S.E.A College</a
+          >
+        </h2>
+        <div class="rest">
+          <div class="rest__left">
+            <h2 class="context">
+              Please feel free to share the pdf format of notes you feel to be
+              uploaded here that would be useful for others by attatching the
+              pdf to the gmail address linked to the submit Button
+            </h2>
+          </div>
+
+          <div class="rest__phone">
+            <h2 class="context">
+              By G-mailing the pdf file, your notes will be uploaded here which
+              can be useful for others
+            </h2>
+          </div>
+
+          <div class="rest__right">
+            <div class="container0">
+              <h3 class="form__main">Contribute</h3>
+              <form action="#" method="post">
+                <div class="form-group">
+                  <a href="mailto:someone@example.com" class="form__link"
+                    >Attatch File</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer" id="footer">
+          <div class="last">
+            <div class="icons">
+              <a target="_blank" href="https://www.instagram.com/"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a target="_blank" href="https://www.facebook.com/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a target="_blank" href="https://www.twitter.com/"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </div>
+            <div class="copy">&copy; Tejas 2023</div>
+          </div>
         </div>
       </section>
     </main>
+    <script src="js/index.js"></script>
   </body>
 </html>

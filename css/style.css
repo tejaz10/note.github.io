@@ -292,7 +292,7 @@ button.learn-more:active::before {
         padding-top: 03rem; } }
     .section__notes .content__physics {
       height: 61rem;
-      display: flex;
+      display: none;
       flex: 1;
       background-color: #fff;
       box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
@@ -409,7 +409,7 @@ td {
 .notes1 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .notes1 .mat {
     display: table;
@@ -418,7 +418,7 @@ td {
 .notes2 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .notes2 .web {
     display: table;
@@ -427,7 +427,7 @@ td {
 .notes3 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .notes3 .mech {
     display: table;
@@ -436,7 +436,7 @@ td {
 .notes4 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .notes4 .mqp {
     display: table;
@@ -445,7 +445,7 @@ td {
 .notes5 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .notes5 .qp {
     display: table;
@@ -454,7 +454,7 @@ td {
 .Cnotes {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .Cnotes .Cphy {
     display: table;
@@ -463,7 +463,7 @@ td {
 .Cnotes1 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .Cnotes1 .Cmat {
     display: table;
@@ -472,7 +472,7 @@ td {
 .Cnotes2 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .Cnotes2 .Cweb {
     display: table;
@@ -481,7 +481,7 @@ td {
 .Cnotes3 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .Cnotes3 .Cmech {
     display: table;
@@ -490,7 +490,7 @@ td {
 .Cnotes4 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .Cnotes4 .Cmqp {
     display: table;
@@ -499,7 +499,7 @@ td {
 .Cnotes5 {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   background-color: #ffffff; }
   .Cnotes5 .Cqp {
     display: table;
@@ -714,7 +714,7 @@ i.fa-instagram {
   padding: 2rem; }
   .content__chemistry {
     height: 61rem;
-    display: flex;
+    display: none;
     flex: 1;
     background-color: #fff;
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);

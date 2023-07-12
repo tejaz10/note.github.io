@@ -10,6 +10,7 @@ document.querySelector(".ctab").addEventListener("click", function () {
   document.querySelector(".content__chemistry").style.display = "flex";
   document.querySelector(".Cnotes").style.display = "flex";
   document.querySelector(".content__physics").style.display = "none";
+  document.querySelector(".Cnotes5").style.display = "none";
 });
 
 document.querySelector(".ptab").addEventListener("click", function () {

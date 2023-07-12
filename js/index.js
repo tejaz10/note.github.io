@@ -17,6 +17,7 @@ document.querySelector(".ptab").addEventListener("click", function () {
   document.querySelector(".content__physics").style.display = "flex";
   document.querySelector(".notes").style.display = "flex";
   document.querySelector(".content__chemistry").style.display = "none";
+  document.querySelector(".notes5").style.display = "none";
 });
 
 // physics cycle :
